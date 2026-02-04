@@ -1,7 +1,9 @@
 .gitignore
 .gitattributes
+*.pyc
 venv
 .idea
+image_background.jpg
 
 
 
