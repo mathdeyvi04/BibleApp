@@ -11,8 +11,7 @@ class MainUI(ctk.CTk):
         super().__init__()
         self.title("BibleApp")
         self.wallpaper = Image.open(Path(__file__).parent / "image_background.jpg")
-        self.geometry("600x400")
-        self.minsize(400, 300)
+        self.geometry("700x600")
 
         # Layout Principal
         self.grid_rowconfigure(0, weight=1)
@@ -54,22 +53,4 @@ class MainUI(ctk.CTk):
         )
         self.btn_bottom.grid(row=1, column=0, sticky="nsew", padx=0, pady=0)
 
-
-
-
-
-
-# Note que carregamos 4 imagens, tornando o código bem consumidor de memória
-
-
-
-
-
-
-
-
-
-
-
-
-
+        self.bind("<Configure>", lambda event: self.minsize(700, 600))

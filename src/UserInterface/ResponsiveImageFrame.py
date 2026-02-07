@@ -40,7 +40,7 @@ class ResponsiveImageFrame(ctk.CTkFrame):
         # Label que servirá de fundo.
         # Ele fica na célula (0,0) e se expande para todas as direções.
         self.display_label = ctk.CTkLabel(self, text="", image=None)
-        self.display_label.grid(row=0, column=0, sticky="nsew")
+        self.display_label.grid(row=0, column=0, rowspan=5, columnspan=5, sticky="nsew")
         self.bg_image = None # Para usarmos mais tarde
 
         # Vincula o evento de redimensionamento
