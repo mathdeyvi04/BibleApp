@@ -13,7 +13,7 @@ class ResponsiveImageButton(ResponsiveImageFrame):
         command (callable): Função executada ao clicar no frame ou imagem.
     """
 
-    def __init__(self, master, image_path: str | Path, text='', command=None, **kwargs):
+    def __init__(self, master, image_path: str | Path=None, text='', command=None, **kwargs):
         super().__init__(master, image_path, **kwargs)
 
         self.command = command

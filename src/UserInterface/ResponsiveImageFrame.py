@@ -16,7 +16,7 @@ class ResponsiveImageFrame(ctk.CTkFrame):
         **kwargs: Argumentos padrão do ctk.CTkFrame.
     """
 
-    def __init__(self, master, image_path: str | Path, position: tuple[int, int, int] = None, **kwargs):
+    def __init__(self, master, image_path: str | Path = None, image: Image = None, position: tuple[int, int, int] = None, **kwargs):
         super().__init__(master, **kwargs)
 
         self.position = position if position else (1, 1, 1)
@@ -29,7 +29,10 @@ class ResponsiveImageFrame(ctk.CTkFrame):
 
         # Carregamento inicial da imagem
         try:
-            self.pil_image = Image.open(image_path)
+            if Image:
+                self.pil_image = image
+            else:
+                self.pil_image = Image.open(image_path)
         except Exception as e:
             msb.showerror("Erro na Imagem", "Imagem não encontrada.")
             self.pil_image = Image.new('RGB', (100, 100), color='gray')
